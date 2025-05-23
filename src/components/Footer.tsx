@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -10,18 +12,10 @@ const Footer = () => {
   ];
 
   const quickLinks = [
-    { name: 'Início', id: 'hero' },
-    { name: 'Sobre', id: 'about' },
-    { name: 'Projetos', id: 'projects' },
-    { name: 'Contato', id: 'contact' }
+    { name: 'Início', path: '/' },
+    { name: 'Projetos', path: '/projetos' },
+    { name: 'Contato', path: '/contato' }
   ];
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <footer className="bg-portfolio-dark border-t border-portfolio-card py-16 px-6 lg:px-8">
@@ -62,12 +56,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => scrollToSection(link.id)}
+                  <Link
+                    to={link.path}
                     className="text-portfolio-text-secondary hover:text-portfolio-blue transition-colors duration-200"
                   >
                     {link.name}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -109,6 +103,7 @@ const Footer = () => {
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-blue transition-colors duration-200 text-sm"
+            aria-label="Voltar ao topo"
           >
             Voltar ao topo
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
