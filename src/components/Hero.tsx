@@ -10,8 +10,18 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section 
+      id="hero" 
+      className="min-h-screen flex items-center justify-center px-6 lg:px-8 relative"
+      style={{
+        backgroundImage: "url('/lovable-uploads/3fcf3416-492c-44a3-9d79-cd8aa909edad.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
+      <div className="absolute inset-0 bg-portfolio-dark/70"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Texto */}
@@ -46,7 +56,7 @@ const Hero = () => {
           {/* Foto */}
           <div className="flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden bg-portfolio-card border border-portfolio-card/50 shadow-2xl">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden bg-portfolio-card border border-portfolio-card/50 shadow-2xl backdrop-blur-sm bg-portfolio-dark/30">
                 <img 
                   src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=400&fit=crop&crop=face"
                   alt="Fábio Catusso"
@@ -65,7 +75,7 @@ const Hero = () => {
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button 
             onClick={scrollToAbout}
-            className="p-2 rounded-full border border-portfolio-card hover:border-portfolio-blue transition-colors duration-200"
+            className="p-2 rounded-full border border-portfolio-card hover:border-portfolio-blue transition-colors duration-200 backdrop-blur-sm bg-portfolio-dark/30"
           >
             <ArrowDown className="w-5 h-5 text-portfolio-text-secondary" />
           </button>
