@@ -23,9 +23,8 @@ const Hero = () => {
               Diretor de Arte & Designer UX/UI
             </h2>
             <p className="text-lg text-portfolio-text-secondary mb-10 leading-relaxed max-w-lg">
-              Transformo ideias em experiências digitais excepcionais. 
-              Especialista em criar interfaces que conectam pessoas e marcas 
-              através do design estratégico.
+              Olá, sou Fábio Catusso — Diretor de arte, Designer UX/UI com 10 anos de experiência, 
+              agora migrando para produto digital.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

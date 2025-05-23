@@ -1,31 +1,51 @@
 
+import { Figma, FileImage, FileText } from 'lucide-react';
+
 const About = () => {
   const skills = [
-    { category: "Design", items: ["UI/UX Design", "Design Systems", "Prototipagem", "Branding"] },
-    { category: "Ferramentas", items: ["Figma", "Adobe XD", "Sketch", "Photoshop", "Illustrator"] },
-    { category: "Desenvolvimento", items: ["HTML/CSS", "React", "Design Responsivo", "Acessibilidade"] },
-    { category: "Metodologias", items: ["Design Thinking", "Lean UX", "Agile", "User Research"] }
+    { 
+      category: "Design", 
+      items: ["UI/UX Design", "Design Systems", "Prototipagem", "Branding", "Design Thinking"] 
+    },
+    { 
+      category: "Ferramentas", 
+      items: ["Figma", "Adobe XD", "Photoshop", "Illustrator", "Sketch"] 
+    },
+    { 
+      category: "Desenvolvimento", 
+      items: ["HTML/CSS", "Design Responsivo", "Acessibilidade", "Design para Mobile"] 
+    },
+    { 
+      category: "Produto", 
+      items: ["User Research", "Design Sprint", "Lean UX", "Agile", "Jornada do Usuário"] 
+    }
   ];
 
   const experience = [
     {
-      year: "2023-Atual",
-      role: "Diretor de Arte",
+      year: "2021-Atual",
+      role: "Diretor de Arte & UX/UI",
       company: "Agência Digital Premium",
-      description: "Liderança de equipes criativas e desenvolvimento de estratégias visuais para grandes marcas."
+      description: "Liderança de equipes criativas e desenvolvimento de estratégias visuais com foco em produto digital."
     },
     {
-      year: "2020-2023",
-      role: "Senior UX/UI Designer",
-      company: "Tech Startup",
-      description: "Responsável por toda a experiência do usuário de produtos digitais inovadores."
+      year: "2017-2021",
+      role: "Senior Designer",
+      company: "Estúdio de Design",
+      description: "Responsável por projetos de branding e marketing digital para grandes marcas nacionais."
     },
     {
-      year: "2018-2020",
-      role: "Designer UI/UX",
-      company: "Consultoria Design",
-      description: "Criação de interfaces e experiências para diversos clientes e setores."
+      year: "2013-2017",
+      role: "Designer Visual",
+      company: "Consultoria de Design",
+      description: "Criação de identidades visuais e materiais gráficos para diversos segmentos."
     }
+  ];
+
+  const designTools = [
+    { name: "Figma", icon: Figma },
+    { name: "Photoshop", icon: FileImage },
+    { name: "Illustrator", icon: FileText },
   ];
 
   return (
@@ -38,8 +58,9 @@ const About = () => {
             Sobre <span className="text-portfolio-blue">Mim</span>
           </h2>
           <p className="text-xl text-portfolio-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Com mais de 6 anos de experiência, sou apaixonado por criar experiências digitais 
-            que fazem a diferença na vida das pessoas e no sucesso dos negócios.
+            Com 10 anos de experiência, atuei principalmente com branding e design gráfico, 
+            e nos últimos anos fiz a transição para o universo digital, focando em UX/UI e 
+            desenvolvimento de produto.
           </p>
         </div>
 
@@ -74,7 +95,7 @@ const About = () => {
           {/* Skills */}
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold text-portfolio-text-primary mb-8">
-              Skills & Especialidades
+              Skills & Ferramentas
             </h3>
             
             <div className="grid gap-6">
@@ -96,6 +117,21 @@ const About = () => {
                 </div>
               ))}
             </div>
+
+            {/* Design Tools with Icons */}
+            <div className="bg-portfolio-card p-6 rounded-xl border border-portfolio-card/50 mt-6">
+              <h4 className="text-lg font-semibold text-portfolio-blue mb-4">
+                Principais Ferramentas
+              </h4>
+              <div className="flex flex-wrap gap-6">
+                {designTools.map((tool, index) => (
+                  <div key={index} className="flex items-center gap-2 bg-portfolio-dark border border-portfolio-card rounded-lg px-4 py-2">
+                    <tool.icon className="text-portfolio-blue w-5 h-5" />
+                    <span className="text-portfolio-text-secondary">{tool.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -103,11 +139,11 @@ const About = () => {
         <div className="mt-16 text-center">
           <div className="bg-portfolio-card p-8 rounded-2xl border border-portfolio-card/50 max-w-4xl mx-auto">
             <blockquote className="text-xl lg:text-2xl text-portfolio-text-primary font-light italic leading-relaxed">
-              "Design não é apenas como algo parece ou como funciona. 
-              Design é <span className="text-portfolio-blue font-medium">como funciona</span>."
+              "Design não é apenas como algo parece, mas como funciona. 
+              O bom design é <span className="text-portfolio-blue font-medium">focado nas pessoas</span>."
             </blockquote>
             <cite className="text-portfolio-text-secondary mt-4 block">
-              — Steve Jobs
+              — Fábio Catusso
             </cite>
           </div>
         </div>

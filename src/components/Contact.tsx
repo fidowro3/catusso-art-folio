@@ -6,7 +6,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,10 +25,10 @@ const Contact = () => {
     // Simular envio do formulário
     setTimeout(() => {
       toast({
-        title: "Mensagem enviada!",
+        title: "Mensagem enviada com sucesso!",
         description: "Obrigado pelo contato. Retornarei em breve!",
       });
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: '', email: '', message: '' });
       setIsSubmitting(false);
     }, 1000);
   };
@@ -37,23 +36,23 @@ const Contact = () => {
   const contactInfo = [
     {
       label: "Email",
-      value: "fabio.catusso@email.com",
-      link: "mailto:fabio.catusso@email.com"
+      value: "fabio@catussodesign.com",
+      link: "mailto:fabio@catussodesign.com"
     },
     {
       label: "LinkedIn",
-      value: "/in/fabio-catusso",
-      link: "https://linkedin.com/in/fabio-catusso"
+      value: "/in/fabiocatusso",
+      link: "https://linkedin.com/in/fabiocatusso"
     },
     {
       label: "Behance",
-      value: "@fabio-catusso",
-      link: "https://behance.net/fabio-catusso"
+      value: "@fabiocatusso",
+      link: "https://behance.net/fabiocatusso"
     },
     {
       label: "WhatsApp",
-      value: "(11) 99999-9999",
-      link: "https://wa.me/5511999999999"
+      value: "+55 (11) 98765-4321",
+      link: "https://wa.me/5511987654321"
     }
   ];
 
@@ -67,8 +66,8 @@ const Contact = () => {
             Vamos <span className="text-portfolio-blue">Conversar</span>
           </h2>
           <p className="text-xl text-portfolio-text-secondary max-w-3xl mx-auto leading-relaxed">
-            Tenho uma ideia? Precisa de ajuda com seu projeto? 
-            Entre em contato e vamos criar algo incrível juntos.
+            Tem um projeto em mente? Precisa de um designer experiente? 
+            Entre em contato e vamos discutir como posso ajudar a transformar suas ideias em realidade.
           </p>
         </div>
 
@@ -106,12 +105,12 @@ const Contact = () => {
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-portfolio-text-secondary">
-                  Disponível para novos projetos
+                  Disponível para projetos freelance
                 </span>
               </div>
               <p className="text-portfolio-text-secondary text-sm leading-relaxed">
-                Atualmente aceito projetos de médio e longo prazo. 
-                Tempo de resposta: até 24h.
+                Atualmente aceito projetos pontuais e contratos de longo prazo.
+                Tempo de resposta: até 24h em dias úteis.
               </p>
             </div>
           </div>
@@ -137,7 +136,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full bg-portfolio-dark border border-portfolio-card rounded-lg px-4 py-3 text-portfolio-text-primary focus:border-portfolio-blue focus:outline-none transition-colors duration-200"
-                      placeholder="Seu nome completo"
+                      placeholder="Seu nome"
                     />
                   </div>
                   
@@ -159,21 +158,6 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-portfolio-text-primary font-medium mb-2">
-                    Empresa/Projeto
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full bg-portfolio-dark border border-portfolio-card rounded-lg px-4 py-3 text-portfolio-text-primary focus:border-portfolio-blue focus:outline-none transition-colors duration-200"
-                    placeholder="Nome da empresa ou projeto"
-                  />
-                </div>
-
-                <div>
                   <label htmlFor="message" className="block text-portfolio-text-primary font-medium mb-2">
                     Mensagem *
                   </label>
@@ -185,7 +169,7 @@ const Contact = () => {
                     required
                     rows={6}
                     className="w-full bg-portfolio-dark border border-portfolio-card rounded-lg px-4 py-3 text-portfolio-text-primary focus:border-portfolio-blue focus:outline-none transition-colors duration-200 resize-none"
-                    placeholder="Conte-me mais sobre seu projeto ou como posso ajudar..."
+                    placeholder="Descreva seu projeto ou como posso ajudar..."
                   />
                 </div>
 
